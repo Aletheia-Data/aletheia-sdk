@@ -88,4 +88,17 @@ async function getDGCPData() {
     }
 }
 
-getDGCPData();
+// getDGCPData();
+
+// Example: Retrieve DGII data for the Dominican Republic
+// Full documentation: https://dgii.gov.do/wsMovilDGII/WSMovilDGII.asmx
+async function getDGIIData() {
+    try {
+        const dgiiData = await aletheiaSDK.opendata.gob('dgii').getContribuyentes();
+        console.log('DGII Data:', dgiiData);
+    } catch (error) {
+        console.error('Error retrieving DGII data:', error);
+    }
+}
+
+getDGIIData();

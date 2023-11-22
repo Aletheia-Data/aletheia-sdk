@@ -24,6 +24,20 @@ class FetchService {
     // Use request utility function for making HTTP GET requests
     return RequestUtils.get(apiUrl, headers);
   }
+
+  /**
+   * Post data from the specified API endpoint.
+   * @param {string} endpoint - The API endpoint to Post data from.
+   * @returns {Promise} A Promise that resolves with the Posted data.
+   */
+  postData(endpoint, body, headers) {
+    const apiUrl = `${endpoint}`;
+
+    // Use request utility function for making HTTP GET requests
+    return RequestUtils.post(apiUrl, headers || {
+      Authorization: `Bearer ${this.apiKey}`,
+    }, body);
+  }
 }
 
 module.exports = FetchService;

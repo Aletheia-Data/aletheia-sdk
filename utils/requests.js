@@ -32,6 +32,7 @@ class RequestUtils {
    */
   static async post(url, headers, body) {
     try {
+      console.log(url, { method: 'POST', headers, body: JSON.stringify(body) });
       const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
       const data = await response.json();
       return data;

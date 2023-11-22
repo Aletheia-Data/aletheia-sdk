@@ -2,6 +2,7 @@ const FetchService = require('./fetchService.js');
 const { objectToQueryString } = require('../utils/format.js');
 const MapGob = require('./gob.do/map.js');
 const DGCP = require('./gob.do/dgcp.js');
+const DGII = require('./gob.do/dgii.js');
 
 class OpenData extends FetchService {
   /**
@@ -12,6 +13,7 @@ class OpenData extends FetchService {
     super(apiKey);
     this.mapGob = new MapGob(apiKey);
     this.dgcp = new DGCP(apiKey);
+    this.dgii = new DGII(apiKey);
   }
   
   /**
@@ -47,6 +49,8 @@ class OpenData extends FetchService {
         return this.mapGob;
       case 'dgcp':
         return this.dgcp;
+      case 'dgii':
+        return this.dgii;
       default:
         return "invalid service";
     }
