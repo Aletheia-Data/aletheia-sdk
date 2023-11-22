@@ -1,5 +1,6 @@
 
 const AletheiaSDK = require('../AletheiaSDK'); 
+const { get } = require('../utils/requests');
 
 // Replace 'YOUR_API_KEY' and 'YOUR_AUTH_DOMAIN' with your actual API key and authentication domain
 const apiKey = 'YOUR_API_KEY';
@@ -58,4 +59,33 @@ async function getTerritories() {
     }
 }
 
-getTerritories();
+// getTerritories();
+
+// Example: Retrieve map data for the Dominican Republic
+// Full documentation: https://map.gob.do/api/datos_abiertos
+async function getMapData() {
+    try {
+        const mapData = await aletheiaSDK.opendata.gob('map').datosAbiertos('servicios_publicos', 'json');
+        console.log('Map Data:', mapData);
+    } catch (error) {
+        console.error('Error retrieving map data:', error);
+    }
+}
+
+// getMapData();
+
+// Example: Retrieve DGCP data for the Dominican Republic
+// Full documentation: https://map.gob.do/api/datos_abiertos
+async function getDGCPData() {
+    try {
+        const dgcpData = await aletheiaSDK.opendata.gob('dgcp').getReleases();
+        console.log('DGCP Data:', dgcpData);
+
+        const dgcpDataOCID = await aletheiaSDK.opendata.gob('dgcp').getReleaseByOcid('ocds-6550wx-DGCP-CCC-CP-2020-0001');
+        console.log('DGCP Data OCID:', dgcpDataOCID);
+    } catch (error) {
+        console.error('Error retrieving DGCP data:', error);
+    }
+}
+
+getDGCPData();

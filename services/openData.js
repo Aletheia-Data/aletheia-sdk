@@ -1,5 +1,7 @@
 const FetchService = require('./fetchService.js');
 const { objectToQueryString } = require('../utils/format.js');
+const MapGob = require('./gob.do/map.js');
+const DGCP = require('./gob.do/dgcp.js');
 
 class OpenData extends FetchService {
   /**
@@ -8,6 +10,8 @@ class OpenData extends FetchService {
    */
   constructor(apiKey) {
     super(apiKey);
+    this.mapGob = new MapGob(apiKey);
+    this.dgcp = new DGCP(apiKey);
   }
   
   /**
@@ -35,6 +39,17 @@ class OpenData extends FetchService {
     const endpoint = `https://api.digital.gob.do/v1/territories/${territoryType}?${queryString}`;
 
     return this.fetchData(endpoint);
+  }
+
+  gob(gob) {
+    switch (gob) {
+      case 'map':
+        return this.mapGob;
+      case 'dgcp':
+        return this.dgcp;
+      default:
+        return "invalid service";
+    }
   }
 
 }
