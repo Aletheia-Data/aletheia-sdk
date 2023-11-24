@@ -1,6 +1,15 @@
-# aletheia_sdk
+# Aletheia SDK
 
-This is the README file for the Aletheia SDK. The Aletheia SDK is a software development kit that provides tools and libraries for working with the Aletheia platform.
+[![GitHub license](https://img.shields.io/github/license/Aletheia-Data/aletheia-sdk)](./LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Aletheia-Data/aletheia-sdk)](./CONTRIBUTING.md)
+[![GitHub stars](https://img.shields.io/github/stars/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/network)
+[![GitHub release](https://img.shields.io/github/release/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/releases)
+[![GitHub contributors](https://img.shields.io/github/contributors/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/graphs/contributors)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/pulls)
+[![GitHub last-commit](https://img.shields.io/github/last-commit/Aletheia-Data/aletheia-sdk)](https://github.com/Aletheia-Data/aletheia-sdk/commits/main)
+
+The Aletheia SDK is a powerful software development kit designed to streamline the integration and utilization of key services and open data provided by various Dominican Republic government and private organizations. It offers a comprehensive set of tools and libraries for developers to seamlessly interact with open data, services and the Aletheia platform's datasets, accessing valuable information for applications, analysis, and decision-making.
 
 ## Installation
 
@@ -41,21 +50,21 @@ try {
 
 The Aletheia SDK provides services from the following providers:
 
-| Name                                   | API URL                                    | Status       | Authentication       | Provider           |
-| -------------------------------------- | ------------------------------------------ | ------------ | ---------------------- | ------------------ |
-| Validación Cedula                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
-| Fuel Prices                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
-| Territory Data                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
+| Name                                   | API URL                                    | API Specs                                   | Status       | Authentication       | Provider           |
+| -------------------------------------- | ------------------------------------------ | --------------------------------------------| ------------ | ---------------------- | ------------------ |
+| Validación Cedula                      | https://api.digital.gob.do/                 | [API Specs](https://developer.digital.gob.do/apis/ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e)   | up-to-date   | No                     | Portal de API's Dominicano                |
+| Fuel Prices                            | https://api.digital.gob.do/                 | [API Specs](https://developer.digital.gob.do/apis/fdf3319d-521e-4364-b331-9d521e636442)        | up-to-date   | No                     | Portal de API's Dominicano                |
+| Territory Data                         | https://api.digital.gob.do/                 | [API Specs](https://developer.digital.gob.do/apis/34995f58-a45f-4b9e-995f-58a45f2b9e92)     | up-to-date   | No                     | Portal de API's Dominicano                |
 
 ## Open Data
 
 The Aletheia SDK provides open data from the following API endpoints:
 
-| Name                                   | API URL                                    | Status       | Authentication       |
-| -------------------------------------- | ------------------------------------------ | ------------ | ---------------------- |
-| Ministerio de Administración Publica (MAP) | https://map.gob.do/api/                              | up-to-date     | No      |
-| Dirección General de Contrataciones Públicas (DGCP) | https://api.dgcp.gob.do/                         | up-to-date     | No      |
-| Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | up-to-date     | No      |
+| Name                                   | API URL                                    | API Specs                                   | Status       | Authentication       |
+| -------------------------------------- | ------------------------------------------ | --------------------------------------------| ------------ | ---------------------- |
+| Ministerio de Administración Publica (MAP) | https://map.gob.do/api/                              | [API Specs](https://map.gob.do/api/datos_abiertos)                | up-to-date     | No      |
+| Dirección General de Contrataciones Públicas (DGCP) | https://api.dgcp.gob.do/                         | [API Specs](https://api.dgcp.gob.do/)               | up-to-date     | No      |
+| Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | [Not Available](#)               | up-to-date     | No      |
 
 
 ## 💖 Special Thanks
