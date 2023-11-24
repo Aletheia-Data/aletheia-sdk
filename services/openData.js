@@ -3,6 +3,7 @@ const { objectToQueryString } = require('../utils/format.js');
 const MapGob = require('./gob.do/map.js');
 const DGCP = require('./gob.do/dgcp.js');
 const DGII = require('./gob.do/dgii.js');
+const Aletheia = require('./aletheia');
 
 class OpenData extends FetchService {
   /**
@@ -14,6 +15,7 @@ class OpenData extends FetchService {
     this.mapGob = new MapGob(apiKey);
     this.dgcp = new DGCP(apiKey);
     this.dgii = new DGII(apiKey);
+    this.aletheia = new Aletheia();
   }
   
   /**
@@ -54,6 +56,10 @@ class OpenData extends FetchService {
       default:
         return "invalid service";
     }
+  }
+
+  ale() {
+    return this.aletheia;
   }
 
 }

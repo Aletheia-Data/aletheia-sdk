@@ -1,3 +1,7 @@
+const { parseXml } = require('../../utils/xmlParser.js');
+const FetchService = require('../fetchService.js');
+const { composeSoapXml } = require('../../utils/soap.js');
+
 /**
  * DGII Class
  * 

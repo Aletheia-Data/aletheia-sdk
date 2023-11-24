@@ -17,8 +17,10 @@ class FetchService {
   fetchData(endpoint) {
     const apiUrl = `${endpoint}`;
 
+      
+    // TODO: handle - Authorization: `Bearer ${this.apiKey}`,
     const headers = {
-      Authorization: `Bearer ${this.apiKey}`,
+      
     };
 
     // Use request utility function for making HTTP GET requests
