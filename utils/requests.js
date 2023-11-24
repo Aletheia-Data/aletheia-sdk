@@ -32,10 +32,18 @@ class RequestUtils {
    */
   static async post(url, headers, body) {
     try {
-      console.log(url, { method: 'POST', headers, body: JSON.stringify(body) });
-      const response = await fetch(url, { method: 'POST', headers, body: JSON.stringify(body) });
-      const data = await response.json();
-      return data;
+      const response = await fetch(url, { 
+        method: 'POST', 
+        headers, 
+        body
+      });
+      const data = await headers['Content-Type'] === 'application/soap+xml; charset=utf-8' ? response.text() : response.json();
+      const res = {
+        data,
+        provider: getDomainFromUrl(url),
+        endpoint: url
+      }
+      return res;
     } catch (error) {
       console.error('Error making POST request:', error);
       throw error;

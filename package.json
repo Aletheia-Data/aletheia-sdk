@@ -1,0 +1,31 @@
+{
+  "name": "aletheia-sdk",
+  "version": "0.0.1",
+  "description": "Aletheia SDK",
+  "main": "AletheiaSDK.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Aletheia-Data/aletheia-sdk.git"
+  },
+  "keywords": [
+    "sdk",
+    "opendata",
+    "aletheiadata"
+  ],
+  "author": "Aletheia Data",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aletheia-Data/aletheia-sdk/issues"
+  },
+  "homepage": "https://github.com/Aletheia-Data/aletheia-sdk#readme",
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}
