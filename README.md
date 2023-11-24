@@ -18,6 +18,23 @@ To use the Aletheia SDK in your project, import the necessary modules and start 
 import { Aletheia } from 'aletheia-sdk';
 
 const aletheia = new Aletheia();
+
+// Example: Validate a citizen's cedula
+const cedulaNumber = 'XXX';
+try {
+  const isValid = await aletheia.services.validateCitizenCedula(cedulaNumber);
+  console.log('Citizen Cedula:', isValid);
+} catch (error) {
+  console.error('Error validating citizen cedula:', error);
+}
+
+// Example: Retrieve data from the Ministry of Public Administration
+try {
+  const mapData = await aletheia.opendata.gob('map').datosAbiertos('servicios_publicos', 'json');
+  console.log('Map Data:', mapData);
+} catch (error) {
+  console.error('Error retrieving map data:', error);
+}
 ```
 
 ## Services
@@ -27,7 +44,8 @@ The Aletheia SDK provides services from the following providers:
 | Name                                   | API URL                                    | Status       | Authentication       | Provider           |
 | -------------------------------------- | ------------------------------------------ | ------------ | ---------------------- | ------------------ |
 | Validación Cedula                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
-
+| Fuel Prices                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
+| Territory Data                      | https://api.digital.gob.do/                 | up-to-date   | No                     | Portal de API's Dominicano                |
 
 ## Open Data
 
@@ -35,8 +53,24 @@ The Aletheia SDK provides open data from the following API endpoints:
 
 | Name                                   | API URL                                    | Status       | Authentication       |
 | -------------------------------------- | ------------------------------------------ | ------------ | ---------------------- |
-| Ministerio de Administración Publica   | https://map.gob.do/api/                              | up-to-date     | No      |
-| Dirección General de Contrataciones Públicas | https://api.dgcp.gob.do/                         | up-to-date     | No      |
+| Ministerio de Administración Publica (MAP) | https://map.gob.do/api/                              | up-to-date     | No      |
+| Dirección General de Contrataciones Públicas (DGCP) | https://api.dgcp.gob.do/                         | up-to-date     | No      |
+| Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | up-to-date     | No      |
+
+
+## 💖 Special Thanks
+
+We extend our sincere gratitude to all Dominican governments and private organizations that contribute to the public good by publishing their APIs and open data. Their commitment to transparency and accessibility empowers developers and enhances the capabilities of our development community.
+
+A big thank you to:
+
+- [Portal de API's Dominicano](https://developer.digital.gob.do/apis)
+- [Ministerio de Administración Publica (MAP)](https://www.map.gob.do/)
+- [Oficina Gubernamental de Tecnologías de la Información y Comunicación (OGTIC)](https://ogtic.gob.do/)
+- [Dirección General de Contrataciones Públicas (DGCP)](https://www.dgcp.gob.do/)
+- [Dirección General de Impuestos Internos (DGII)](https://dgii.gov.do/)
+
+Your dedication to open data and public service is invaluable and greatly appreciated.
 
 
 ## 💖 Contributing
