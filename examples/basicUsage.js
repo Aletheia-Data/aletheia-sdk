@@ -27,8 +27,6 @@ async function getCitizenData() {
   }
 }
 
-// getCitizenData();
-
 // Example: Retrieve fuel prices for the Dominican Republic
 // Full documentation: https://developer.digital.gob.do/apis/fdf3319d-521e-4364-b331-9d521e636442
 async function getFuelPrices() {
@@ -39,8 +37,6 @@ async function getFuelPrices() {
     console.error('Error retrieving fuel prices:', error);
   }
 }
-
-// getFuelPrices();
 
 // Example: Retrieve territories for the Dominican Republic
 // Full documentation: https://developer.digital.gob.do/apis/34995f58-a45f-4b9e-995f-58a45f2b9e92
@@ -59,8 +55,6 @@ async function getTerritories() {
     }
 }
 
-// getTerritories();
-
 // Example: Retrieve map data for the Dominican Republic
 // Full documentation: https://map.gob.do/api/datos_abiertos
 async function getMapData() {
@@ -71,8 +65,6 @@ async function getMapData() {
         console.error('Error retrieving map data:', error);
     }
 }
-
-// getMapData();
 
 // Example: Retrieve DGCP data for the Dominican Republic
 // Full documentation: https://map.gob.do/api/datos_abiertos
@@ -87,8 +79,6 @@ async function getDGCPData() {
         console.error('Error retrieving DGCP data:', error);
     }
 }
-
-// getDGCPData();
 
 // Example: Retrieve DGII data for the Dominican Republic
 // Full documentation: https://dgii.gov.do/wsMovilDGII/WSMovilDGII.asmx
@@ -171,11 +161,16 @@ async function getSolicitud() {
 }
 
 // Call the methods
-getDGIIContribuyentes();
+// getCitizenData();
+// getFuelPrices();
+// getTerritories();
+// getMapData();
+// getDGCPData();
+// getDGIIContribuyentes();
 // getDGIIContribuyentesCount();
 // getDGIIDocumento();
 // getDGIIVehiculoPorDATAMATRIX();
 // getDGIINCF();
 // getDGIINCF2();
-// getSolicitud();
+getSolicitud();
 

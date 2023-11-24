@@ -8,7 +8,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
   "homepage": "https://github.com/Aletheia-Data/aletheia-sdk#readme",
   "dependencies": {
     "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
