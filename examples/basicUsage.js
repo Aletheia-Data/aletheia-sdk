@@ -163,7 +163,7 @@ async function getSolicitud() {
 
 async function getAletheias() {
     try {
-        const dgiiData = await aletheiaSDK.opendata.ale().getCategories();
+        const dgiiData = await aletheiaSDK.opendata.ale().getUploads();
         console.log('Solicitud Data:', dgiiData);
     } catch (error) {
         console.error('Error retrieving Solicitud data:', error);
