@@ -35,7 +35,7 @@ const aletheiaSDK = new AletheiaSDK(apiKey, authDomain);
 
 async function getCitizenData() {
     try {
-      const isValid = await aletheiaSDK.services.validateCitizenCedula('40253575910');
+      const isValid = await aletheiaSDK.services.validateCitizenCedula('40253....');
       console.log('Citizen Cedula:', isValid);
     } catch (error) {
       console.error('Error retrieving citizen data:', error);
