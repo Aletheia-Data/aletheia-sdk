@@ -1,3 +1,7 @@
+const { parseXml } = require('../../utils/xmlParser.js');
+const FetchService = require('../fetchService.js');
+const { composeSoapXml } = require('../../utils/soap.js');
+
 /**
  * DGII Class
  * 
@@ -42,7 +46,6 @@ class DGII extends FetchService {
       const xmlResult = await this.postData(endpoint, requestXml, headers);
       const parsedResult = await parseXml(await xmlResult.data);
       const resultBody = parsedResult['soap:Envelope']['soap:Body'][0];
-      console.log(`Result from ${operation} operation:`, JSON.stringify(resultBody, null, 2));
       const result = resultBody[`${operation}Response`][0][`${operation}Result`][0];
       xmlResult['data'] = result ? JSON.parse(result) : result;
       return xmlResult;

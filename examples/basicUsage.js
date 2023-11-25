@@ -160,6 +160,16 @@ async function getSolicitud() {
     }
 }
 
+
+async function getAletheias() {
+    try {
+        const dgiiData = await aletheiaSDK.opendata.ale().getUploads();
+        console.log('Solicitud Data:', dgiiData);
+    } catch (error) {
+        console.error('Error retrieving Solicitud data:', error);
+    }
+}
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -172,5 +182,6 @@ async function getSolicitud() {
 // getDGIIVehiculoPorDATAMATRIX();
 // getDGIINCF();
 // getDGIINCF2();
-getSolicitud();
+// getSolicitud();
+getAletheias();
 
