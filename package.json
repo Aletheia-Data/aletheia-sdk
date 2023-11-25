@@ -1,5 +1,5 @@
 {
-  "name": "aletheia-sdk",
+  "name": "@aletheia-data/aletheia-sdk",
   "version": "0.0.2",
   "description": "Aletheia SDK",
   "main": "AletheiaSDK.js",
