@@ -13,37 +13,48 @@ The Aletheia SDK is a powerful software development kit designed to streamline t
 
 ## Installation
 
-To install the Aletheia SDK, follow these steps:
+To install the Aletheia SDK, simply run the following command in your project's root directory:
 
-1. Clone the repository: `git clone https://github.com/username/aletheia-sdk.git`
-2. Navigate to the project directory: `cd aletheia-sdk`
-3. Install dependencies: `npm install`
+```javascript
+npm install @aletheia-data/aletheia-sdk
+```
 
 ## Usage
 
 To use the Aletheia SDK in your project, import the necessary modules and start using the provided functions and classes. Here's an example:
 
 ```javascript
-import { Aletheia } from 'aletheia-sdk';
+const AletheiaSDK = require('@aletheia-data/aletheia-sdk'); 
 
-const aletheia = new Aletheia();
+// (TBD) Replace 'YOUR_API_KEY' and 'YOUR_AUTH_DOMAIN' with your actual API key and authentication domain
+const apiKey = 'YOUR_API_KEY';
+const authDomain = 'YOUR_AUTH_DOMAIN';
 
-// Example: Validate a citizen's cedula
-const cedulaNumber = 'XXX';
-try {
-  const isValid = await aletheia.services.validateCitizenCedula(cedulaNumber);
-  console.log('Citizen Cedula:', isValid);
-} catch (error) {
-  console.error('Error validating citizen cedula:', error);
-}
+// Initialize the Aletheia SDK
+const aletheiaSDK = new AletheiaSDK(apiKey, authDomain);
 
-// Example: Retrieve data from the Ministry of Public Administration
-try {
-  const mapData = await aletheia.opendata.gob('map').datosAbiertos('servicios_publicos', 'json');
-  console.log('Map Data:', mapData);
-} catch (error) {
-  console.error('Error retrieving map data:', error);
-}
+async function getCitizenData() {
+    try {
+      const isValid = await aletheiaSDK.services.validateCitizenCedula('40253575910');
+      console.log('Citizen Cedula:', isValid);
+    } catch (error) {
+      console.error('Error retrieving citizen data:', error);
+    }
+  }
+
+getCitizenData();
+
+async function getOpenAPIMap() {
+    // Example: Retrieve data from the MAP
+    try {
+      const mapData = await aletheia.opendata.gob('map').datosAbiertos('servicios_publicos', 'json');
+      console.log('Map Data:', mapData);
+    } catch (error) {
+      console.error('Error retrieving map data:', error);
+    }
+  }
+
+getOpenAPIMap();
 ```
 
 ## Services
@@ -68,7 +79,7 @@ The Aletheia SDK provides open data from the following API endpoints:
 | Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | [Not Available](#)               | up-to-date     | No      |
 
 
-## 💖 Special Thanks
+## 🙏🏾 Special Thanks
 
 We extend our sincere gratitude to all Dominican governments and private organizations that contribute to the public good by publishing their APIs and open data. Their commitment to transparency and accessibility empowers developers and enhances the capabilities of our development community.
 

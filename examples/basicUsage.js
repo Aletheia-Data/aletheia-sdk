@@ -1,6 +1,6 @@
 
-const AletheiaSDK = require('../AletheiaSDK'); 
-const { get } = require('../utils/requests');
+const AletheiaSDK = require('../dist/bundle'); 
+const { get } = require('../dist/bundle');
 
 // Replace 'YOUR_API_KEY' and 'YOUR_AUTH_DOMAIN' with your actual API key and authentication domain
 const apiKey = 'YOUR_API_KEY';
@@ -183,5 +183,5 @@ async function getAletheias() {
 // getDGIINCF();
 // getDGIINCF2();
 // getSolicitud();
-getAletheias();
+// getAletheias();
 
