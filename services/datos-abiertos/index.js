@@ -26,9 +26,10 @@ class DatosAbiertos extends FetchService {
   /**
   * Retrieves and parses the dataset Datos Abiertos from the API.
   * @param {string} dataset - The name of the dataset to retrieve.
-  * * @example
+  * @returns {Promise} A promise that resolves to the fetched Datos Abiertos data.
+  * @example
   * // Example: Retrieve fuel prices for the Dominican Republic
-  * // Full documentation: https://developer.digital.gob.do/apis/fdf3319d-521e-4364-b331-9d521e636442
+  * // Full documentation: https://datos.gob.do/
   * async function getDatosAbiertosDatasets() {
   *     try {
   *         const dataset = 'recaudaciones-sirite-2021-2022';
@@ -39,7 +40,7 @@ class DatosAbiertos extends FetchService {
   *     }
   * }
   * getDatosAbiertosDatasets();
-  * @returns {Promise} A promise that resolves to the fetched Datos Abiertos data.
+  * @returns {Object} Returns the fetched data from Datos Abiertos.
   */
   async getDatasetJSON(dataset) {
     const endpoint = `${this.apiDomain}/${dataset}`;
@@ -79,9 +80,10 @@ class DatosAbiertos extends FetchService {
   /**
   * Retrieves and parses the dataset URLs for Datos Abiertos from the API.
   * @param {string} dataset - The name of the dataset to retrieve URLs for.
-  * * * @example
+  * @returns {Promise} A promise that resolves to an array of dataset URLs.
+  * @example
   * // Example: Retrieve fuel prices for the Dominican Republic
-  * // Full documentation: https://developer.digital.gob.do/apis/fdf3319d-521e-4364-b331-9d521e636442
+  * // Full documentation: https://datos.gob.do/
   * async function getDatasetCSVUrls() {
   *     try {
   *         // const dataset = 'nomina-miembros-policiales-2019';
@@ -94,7 +96,7 @@ class DatosAbiertos extends FetchService {
   *     }
   * }
   * getDatasetCSVUrls();
-  * @returns {Promise} A promise that resolves to an array of dataset URLs.
+  * @returns {Object} Returns an array of dataset URLs.
   */
   async getDatasetCSVUrls(dataset) {
     const endpoint = `${this.apiDomain}/${dataset}`;
