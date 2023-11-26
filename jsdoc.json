@@ -11,6 +11,7 @@
             "./services",
             "./services/aletheia",
             "./services/gob.do",
+            "./services/datos-abiertos",
             "./utils"
         ],
         "includePattern": "\\.(jsx|js|ts|tsx)$"
