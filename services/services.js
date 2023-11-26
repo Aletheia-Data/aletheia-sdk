@@ -1,9 +1,14 @@
 const FetchService = require('./fetchService.js');
 
 /**
- * Open Services Class
+ * Services Class
  * 
+ * Represents a client for interacting with various open services for the Dominican citizen.
+ * This class extends the FetchService class and provides methods for different use cases.
+ *
  * @category Open Services
+ * @class
+ * @extends FetchService
  */
 class Services extends FetchService {
   /**

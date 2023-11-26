@@ -8,7 +8,12 @@ const Aletheia = require('./aletheia');
 /**
  * Open Data Class
  * 
+ * Represents methods for accessing open data provided by the Dominican Republic government or private organizations.
+ * This class extends the FetchService class and includes specialized modules for different open data providers, such as MapGob, DGCP, DGII, and Aletheia.
+ *
  * @category Open Data
+ * @class
+ * @extends FetchService
  */
 class OpenData extends FetchService {
   /**

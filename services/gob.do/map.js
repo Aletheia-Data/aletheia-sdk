@@ -1,8 +1,15 @@
 const FetchService = require('../fetchService.js');
 
 /**
- * Class description
+ * MapGob Class
+ * 
+ * Represents a client for interacting with the Map (Ministerio de Administración Pública) API, providing methods for retrieving open data.
+ * This class extends the FetchService class and focuses on accessing data related to various services
+ * using specified parameters and formats.
+ *
  * @category Gob.do
+ * @class
+ * @extends FetchService
  */
 class MapGob extends FetchService {
   /**
