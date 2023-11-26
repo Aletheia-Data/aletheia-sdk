@@ -77,6 +77,7 @@ The Aletheia SDK provides open data from the following API endpoints:
 | Ministerio de Administración Publica (MAP) | https://map.gob.do/api/                              | [API Specs](https://map.gob.do/api/datos_abiertos)                | up-to-date     | No      |
 | Dirección General de Contrataciones Públicas (DGCP) | https://api.dgcp.gob.do/                         | [API Specs](https://api.dgcp.gob.do/)               | up-to-date     | No      |
 | Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | [Not Available](#)               | up-to-date     | No      |
+| Datos Abiertos (Datos.gob.do) | https://datos.gob.do/                         | [Not Available](#)               | up-to-date     | No      |
 
 
 ## 🙏🏾 Special Thanks
@@ -90,6 +91,7 @@ A big thank you to:
 - [Oficina Gubernamental de Tecnologías de la Información y Comunicación (OGTIC)](https://ogtic.gob.do/)
 - [Dirección General de Contrataciones Públicas (DGCP)](https://www.dgcp.gob.do/)
 - [Dirección General de Impuestos Internos (DGII)](https://dgii.gov.do/)
+- [Dirección General de Ética e Integridad Gubernamental (DIGEIG)](http://www.digeig.gob.do/)
 
 Your dedication to open data and public service is invaluable and greatly appreciated.
 
