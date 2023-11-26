@@ -1,5 +1,4 @@
 // Import the FetchService module
-const FetchService = require('../fetchService.js');
 const { fetchAndParseHTML, fetchAndParseCSV } = require('../../utils/parse.js');
 const { getDomainFromUrl } = require("../../utils/url.js");
 
@@ -15,8 +14,6 @@ class DatosAbiertos {
    * @param {string} apiKey - The API key for authentication.
    */
   constructor(apiKey) {
-    // Call the constructor of the parent class (FetchService)
-    super(apiKey);
     // Set the API domain for Datos Abiertos
     this.apiDomain = "https://datos.gob.do/dataset";
   }

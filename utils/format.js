@@ -1,5 +1,6 @@
 /**
  * Convert an object into a URL query string.
+ * @category Utils
  * @param {Object} obj - The object to convert.
  * @returns {string} A URL query string representation of the object.
  * @example
