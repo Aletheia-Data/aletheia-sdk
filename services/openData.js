@@ -4,6 +4,7 @@ const MapGob = require('./gob.do/map.js');
 const DGCP = require('./gob.do/dgcp.js');
 const DGII = require('./gob.do/dgii.js');
 const Aletheia = require('./aletheia');
+const DatosAbiertos = require('./datos-abiertos');
  
 /**
  * Open Data Class
@@ -22,10 +23,11 @@ class OpenData extends FetchService {
    */
   constructor(apiKey) {
     super(apiKey);
-    this.mapGob = new MapGob(apiKey);
-    this.dgcp = new DGCP(apiKey);
-    this.dgii = new DGII(apiKey);
+    this.mapGob = new MapGob();
+    this.dgcp = new DGCP();
+    this.dgii = new DGII();
     this.aletheia = new Aletheia();
+    this.datosAbiertos = new DatosAbiertos();
   }
   
   /**
@@ -76,6 +78,8 @@ class OpenData extends FetchService {
         return this.dgcp;
       case 'dgii':
         return this.dgii;
+      case 'datos-abiertos':
+        return this.datosAbiertos;
       default:
         return "invalid service";
     }

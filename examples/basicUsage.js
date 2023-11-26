@@ -1,5 +1,5 @@
 
-const AletheiaSDK = require('../dist/bundle'); 
+const AletheiaSDK = require('../AletheiaSDK'); 
 const { get } = require('../dist/bundle');
 
 // Replace 'YOUR_API_KEY' and 'YOUR_AUTH_DOMAIN' with your actual API key and authentication domain
@@ -170,9 +170,42 @@ async function getAletheias() {
     }
 }
 
+async function getDatosAbiertosDataset() {
+    try {
+        // const dataset = 'nomina-miembros-policiales-2019';
+        const dataset = 'trafico-2020';
+        const daData = await aletheiaSDK.opendata.gob('datos-abiertos').getDatasetJSON(dataset);
+        console.log('Datos Abiertos Data:', daData.datasetJSON);
+    } catch (error) {
+        console.error('Error retrieving Datos Abiertos data:', error);
+    }
+}
+
+async function getDatosAbiertosDatasets() {
+    try {
+        const dataset = 'recaudaciones-sirite-2021-2022';
+        const daData = await aletheiaSDK.opendata.gob('datos-abiertos').getDatasetJSON(dataset);
+        console.log('Datos Abiertos Data:', daData.datasetJSON);
+    } catch (error) {
+        console.error('Error retrieving Datos Abiertos data:', error);
+    }
+}
+
+async function getDatasetCSVUrls() {
+    try {
+        // const dataset = 'nomina-miembros-policiales-2019';
+        // const dataset = 'trafico-2020';
+        const dataset = 'recaudaciones-sirite-2021-2022';
+        const daData = await aletheiaSDK.opendata.gob('datos-abiertos').getDatasetCSVUrls(dataset);
+        console.log('Datos Abiertos Data:', daData);
+    } catch (error) {
+        console.error('Error retrieving Datos Abiertos data:', error);
+    }
+}
+
 // Call the methods
 // getCitizenData();
-getFuelPrices();
+// getFuelPrices();
 // getTerritories();
 // getMapData();
 // getDGCPData();
@@ -184,4 +217,6 @@ getFuelPrices();
 // getDGIINCF2();
 // getSolicitud();
 // getAletheias();
-
+getDatosAbiertosDataset();
+// getDatosAbiertosDatasets();
+// getDatasetCSVUrls();
