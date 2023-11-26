@@ -1,4 +1,12 @@
-
+/**
+ * Authentication Class
+ * 
+ * TBD
+ * @ignore
+ * @category Authentication
+ * @class
+ * @extends FetchService
+ */
 class Auth {
     constructor(apiKey, authDomain) {
       this.apiKey = apiKey;

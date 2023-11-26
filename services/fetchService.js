@@ -1,5 +1,13 @@
 const RequestUtils = require('../utils/requests');
-
+/**
+ * FetchService Class
+ * 
+ * TBD
+ * @ignore
+ * @category Authentication
+ * @class
+ * @extends FetchService
+ */
 class FetchService {
   /**
    * Create an instance of FetchService.
@@ -11,6 +19,7 @@ class FetchService {
 
   /**
    * Fetch data from the specified API endpoint.
+   * @ignore
    * @param {string} endpoint - The API endpoint to fetch data from.
    * @returns {Promise} A Promise that resolves with the fetched data.
    */
@@ -29,6 +38,7 @@ class FetchService {
 
   /**
    * Post data from the specified API endpoint.
+   * @ignore
    * @param {string} endpoint - The API endpoint to Post data from.
    * @returns {Promise} A Promise that resolves with the Posted data.
    */

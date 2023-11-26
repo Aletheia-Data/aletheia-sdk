@@ -1,17 +1,15 @@
 // Import the FetchService module
 const FetchService = require('../fetchService.js');
 const { fetchAndParseHTML, fetchAndParseCSV } = require('../../utils/parse.js');
-const { getDomainFromUrl } = require("../../utils/url");
+const { getDomainFromUrl } = require("../../utils/url.js");
 
 /**
  * Represents Datos Abiertos class, which extends the FetchService class.
  * This class provides methods to interact with the Datos Abiertos Datasets.
  * 
- * @category Datos.gob.do
- * @class
- * @extends FetchService
+ * @category Gob.do
  */
-class DatosAbiertos extends FetchService {
+class DatosAbiertos {
   /**
    * Create an instance of the Datos Abiertos service.
    * @param {string} apiKey - The API key for authentication.
