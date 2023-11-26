@@ -30,8 +30,8 @@
             "name": "Aletheia SDK Documentation",
             "title": "Aletheia SDK Documentation",
             "css": "style.css",
-            "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
-	    "hideGenerator": false,
+            "trackingCode": "<meta http-equiv='cache-control' content='no-cache'><meta http-equiv='expires' content='0'><meta http-equiv='pragma' content='no-cache'>",
+            "hideGenerator": false,
             "navLinks": [
                 {
                     "label": "Github",
