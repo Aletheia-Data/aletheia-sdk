@@ -4,7 +4,7 @@ const MapGob = require('./gob.do/map.js');
 const DGCP = require('./gob.do/dgcp.js');
 const DGII = require('./gob.do/dgii.js');
 const Aletheia = require('./aletheia');
-
+ 
 /**
  * Open Data Class
  * 
