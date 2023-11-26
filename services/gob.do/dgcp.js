@@ -1,5 +1,9 @@
 const FetchService = require('../fetchService.js');
 
+/**
+ * Class description
+ * @category Gob.do
+ */
 class DGCP extends FetchService {
   /**
    * Create an instance of DGCPApi service.

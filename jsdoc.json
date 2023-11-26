@@ -1,0 +1,48 @@
+{
+    "tags": {
+        "allowUnknownTags": ["category"]
+    },
+    "plugins": [
+        "node_modules/better-docs/typescript",
+        "node_modules/better-docs/category"
+    ],
+    "source": {
+        "include": [
+            "./services",
+            "./services/aletheia",
+            "./services/gob.do",
+            "./utils"
+        ],
+        "includePattern": "\\.(jsx|js|ts|tsx)$"
+    },
+    "opts": {
+        "template": "node_modules/better-docs",
+        "encoding": "utf8",
+        "destination": "docs/",
+        "readme": "readme.md"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "search": true,
+        "better-docs": {
+            "name": "Aletheia SDK Documentation",
+            "title": "Aletheia SDK Documentation",
+            "css": "style.css",
+            "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
+	    "hideGenerator": false,
+            "navLinks": [
+                {
+                    "label": "Github",
+                    "href": "https://github.com/Aletheia-Data/aletheia-sdk",
+                    "target": "_blank"
+                },
+                {
+                    "label": "SDK",
+                    "href": "https://sdk.aletheiadata.org/",
+                    "target": "_blank"
+                }
+            ]
+        }
+    }
+}
