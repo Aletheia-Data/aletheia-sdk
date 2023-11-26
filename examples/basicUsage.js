@@ -171,8 +171,8 @@ async function getAletheias() {
 }
 
 // Call the methods
-getCitizenData();
-// getFuelPrices();
+// getCitizenData();
+getFuelPrices();
 // getTerritories();
 // getMapData();
 // getDGCPData();

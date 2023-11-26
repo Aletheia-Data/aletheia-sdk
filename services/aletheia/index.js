@@ -4,6 +4,8 @@ const FetchService = require('../fetchService.js');
 /**
  * Represents the Aletheia class, which extends the FetchService class.
  * This class provides methods to interact with the Aletheia API.
+ * 
+ * @category Aletheiadata.org
  * @extends FetchService
  */
 class Aletheia extends FetchService {

@@ -9,6 +9,7 @@ const { composeSoapXml } = require('../../utils/soap.js');
  * This class extends the FetchService class and provides methods for various operations such as retrieving
  * taxpayer information, vehicle details, NCF (Número de Comprobante Fiscal), and more.
  *
+ * @category Gob.do
  * @class
  * @extends FetchService
  */
