@@ -264,6 +264,19 @@ async function createMITEmpresa() {
     }
 }
 
+async function getConsultaMIT() {
+    try {
+        // disabling ssl verification as without it the method trows an error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+        // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+        // TODO: find a better solution
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').GetConsulta('40253515910');
+        console.log('MIT Empresa Data:', mitEmpresaData);
+    } catch (error) {
+        console.error('Error retrieving MIT data:', error);
+    }
+}
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -284,5 +297,6 @@ async function createMITEmpresa() {
 // getMITDivision();
 // getCitizenData();
 // getMITDivisiones();
-getMITAvailableYears();
+// getMITAvailableYears();
 // createMITEmpresa();
+getConsultaMIT()
