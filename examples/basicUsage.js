@@ -277,6 +277,26 @@ async function getConsultaMIT() {
     }
 }
 
+// Example: Retrieve APIs info from https://developer.digital.gob.do
+async function getAPIs() {
+    try {
+      const apisList = await aletheiaSDK.opendata.gob('digital').getApis();
+      console.log('Develper APIs:', apisList);
+    } catch (error) {
+      console.error('Error retrieving developer apis:', error);
+    }
+}
+
+async function getAPI() {
+    try {
+      const id = "ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e";
+      const apiInfo = await aletheiaSDK.opendata.gob('digital').getApisById(id);
+      console.log('Develper APIs:', apiInfo);
+    } catch (error) {
+      console.error('Error retrieving developer api:', error);
+    }
+}
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -299,4 +319,6 @@ async function getConsultaMIT() {
 // getMITDivisiones();
 // getMITAvailableYears();
 // createMITEmpresa();
-getConsultaMIT()
+//getConsultaMIT()
+// getAPIs();
+getAPI();
