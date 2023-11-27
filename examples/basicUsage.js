@@ -210,7 +210,7 @@ async function getMITDivision() {
         // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
         // TODO: find a better solution
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-        const mitData = await aletheiaSDK.opendata.gob('mit').GetTiposDivision();
+        const mitData = await aletheiaSDK.opendata.gob('mit').getTiposDivision();
         console.log('MIT Division Data:', mitData);
     } catch (error) {
         console.error('Error retrieving MIT data:', error);
@@ -223,7 +223,7 @@ async function getMITDivisiones() {
         // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
         // TODO: find a better solution
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-        const mitData = await aletheiaSDK.opendata.gob('mit').GetDivisiones();
+        const mitData = await aletheiaSDK.opendata.gob('mit').getDivisiones();
         console.log('MIT Division Data:', mitData);
     } catch (error) {
         console.error('Error retrieving MIT data:', error);
@@ -236,7 +236,7 @@ async function getMITAvailableYears() {
         // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
         // TODO: find a better solution
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-        const mitData = await aletheiaSDK.opendata.gob('mit').GetAvailableYears();
+        const mitData = await aletheiaSDK.opendata.gob('mit').getAvailableYears();
         console.log('MIT Division Data:', mitData);
     } catch (error) {
         console.error('Error retrieving MIT data:', error);
@@ -257,7 +257,7 @@ async function createMITEmpresa() {
             "telefono": "8091234567",
             "correo": "test@text.com"
         }
-        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').CreateEmpresa(params);
+        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').createEmpresa(params);
         console.log('MIT Empresa Data:', mitEmpresaData);
     } catch (error) {
         console.error('Error retrieving MIT data:', error);
@@ -270,7 +270,7 @@ async function getConsultaMIT() {
         // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
         // TODO: find a better solution
         process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
-        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').GetConsulta('40253515910');
+        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').getConsulta('40253515910');
         console.log('MIT Empresa Data:', mitEmpresaData);
     } catch (error) {
         console.error('Error retrieving MIT data:', error);

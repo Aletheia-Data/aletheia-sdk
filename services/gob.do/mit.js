@@ -29,7 +29,7 @@ class MitGob extends FetchService {
    * @example
    * async function getMITTiposDivision() {
    *   try {
-   *     const mitData = await mitGob.GetTiposDivision();
+   *     const mitData = await mitGob.getTiposDivision();
    *     console.log('MIT Division Types:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Division Types:', error);
@@ -37,7 +37,7 @@ class MitGob extends FetchService {
    * }
    * getMITTiposDivision();
    */
-  GetTiposDivision() {
+  getTiposDivision() {
     const endpoint = `${this.apiDomain}/api/Listados/GetTiposDivision`;
     console.log(endpoint);
     return this.fetchData(endpoint);
@@ -50,7 +50,7 @@ class MitGob extends FetchService {
    * @example
    * async function getMITDivisiones() {
    *   try {
-   *     const mitData = await mitGob.GetDivisiones();
+   *     const mitData = await mitGob.getDivisiones();
    *     console.log('MIT Divisiones:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Divisiones:', error);
@@ -58,7 +58,7 @@ class MitGob extends FetchService {
    * }
    * getMITDivisiones();
    */
-  GetDivisiones() {
+  getDivisiones() {
     const endpoint = `${this.apiDomain}/api/Listados/GetDivisiones`;
     return this.fetchData(endpoint);
   }
@@ -70,7 +70,7 @@ class MitGob extends FetchService {
    * @example
    * async function getMITAvailableYears() {
    *   try {
-   *     const mitData = await mitGob.GetAvailableYears();
+   *     const mitData = await mitGob.getAvailableYears();
    *     console.log('MIT Available Years:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Available Years:', error);
@@ -78,7 +78,7 @@ class MitGob extends FetchService {
    * }
    * getMITAvailableYears();
    */
-  GetAvailableYears() {
+  getAvailableYears() {
     const endpoint = `${this.apiDomain}/api/holidays/availableyears`;
     return this.fetchData(endpoint);
   }
@@ -90,7 +90,7 @@ class MitGob extends FetchService {
    * @example
    * async function getMITHolidays() {
    *   try {
-   *     const mitData = await mitGob.GetHolidays();
+   *     const mitData = await mitGob.getHolidays();
    *     console.log('MIT Holidays:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Holidays:', error);
@@ -98,7 +98,7 @@ class MitGob extends FetchService {
    * }
    * getMITHolidays();
    */
-  GetHolidays() {
+  getHolidays() {
     const endpoint = `${this.apiDomain}/api/Holidays`;
     return this.fetchData(endpoint);
   }
@@ -112,7 +112,7 @@ class MitGob extends FetchService {
    * async function getMITHolidayById() {
    *   try {
    *     const holidayId = '123';
-   *     const mitData = await mitGob.GetHolidayById(holidayId);
+   *     const mitData = await mitGob.getHolidayById(holidayId);
    *     console.log('MIT Holiday:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Holiday:', error);
@@ -120,7 +120,7 @@ class MitGob extends FetchService {
    * }
    * getMITHolidayById();
    */
-  GetHolidayById(id) {
+  getHolidayById(id) {
     const endpoint = `${this.apiDomain}/api/Holidays/${id}`;
     return this.fetchData(endpoint);
   }
@@ -136,7 +136,7 @@ class MitGob extends FetchService {
    *   try {
    *     const from = '2023-01-01';
    *     const count = 5;
-   *     const mitData = await mitGob.GetHolidaysByRange(from, count);
+   *     const mitData = await mitGob.getHolidaysByRange(from, count);
    *     console.log('MIT Holidays:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Holidays:', error);
@@ -144,7 +144,7 @@ class MitGob extends FetchService {
    * }
    * getMITHolidaysByRange();
    */
-  GetHolidaysByRange(from, count) {
+  getHolidaysByRange(from, count) {
     const endpoint = `${this.apiDomain}/api/Holidays?from=${from}&count=${count}`;
     return this.fetchData(endpoint);
   }
@@ -158,7 +158,7 @@ class MitGob extends FetchService {
    * async function postMITHoliday() {
    *   try {
    *     const newHoliday = { name: 'New Year', date: '2023-01-01' };
-   *     const mitData = await mitGob.PostHoliday(newHoliday);
+   *     const mitData = await mitGob.postHoliday(newHoliday);
    *     console.log('MIT Posted Holiday:', mitData);
    *   } catch (error) {
    *     console.error('Error posting MIT Holiday:', error);
@@ -166,7 +166,7 @@ class MitGob extends FetchService {
    * }
    * postMITHoliday();
    */
-  PostHoliday(holidayData) {
+  postHoliday(holidayData) {
     const endpoint = `${this.apiDomain}/api/Holidays`;
     return this.postData(endpoint, holidayData);
   }
@@ -182,7 +182,7 @@ class MitGob extends FetchService {
    *   try {
    *     const holidayId = '123';
    *     const updatedData = { name: 'Updated Year', date: '2023-01-01' };
-   *     const mitData = await mitGob.PutHoliday(holidayId, updatedData);
+   *     const mitData = await mitGob.putHoliday(holidayId, updatedData);
    *     console.log('MIT Updated Holiday:', mitData);
    *   } catch (error) {
    *     console.error('Error updating MIT Holiday:', error);
@@ -190,7 +190,7 @@ class MitGob extends FetchService {
    * }
    * putMITHoliday();
    */
-  PutHoliday(id, updatedData) {
+  putHoliday(id, updatedData) {
     const endpoint = `${this.apiDomain}/api/Holidays/${id}`;
     return this.putData(endpoint, updatedData);
   }
@@ -204,7 +204,7 @@ class MitGob extends FetchService {
    * async function deleteMITHoliday() {
    *   try {
    *     const holidayId = '123';
-   *     await mitGob.DeleteHoliday(holidayId);
+   *     await mitGob.deleteHoliday(holidayId);
    *     console.log('MIT Holiday Deleted Successfully');
    *   } catch (error) {
    *     console.error('Error deleting MIT Holiday:', error);
@@ -212,7 +212,7 @@ class MitGob extends FetchService {
    * }
    * deleteMITHoliday();
    */
-  DeleteHoliday(id) {
+  deleteHoliday(id) {
     const endpoint = `${this.apiDomain}/api/Holidays/${id}`;
     return this.deleteData(endpoint);
   }
@@ -226,7 +226,7 @@ class MitGob extends FetchService {
    * async function getMITConsulta() {
    *   try {
    *     const documento = '123456789';
-   *     const mitData = await mitGob.GetConsulta(documento);
+   *     const mitData = await mitGob.getConsulta(documento);
    *     console.log('MIT Consulta:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Consulta:', error);
@@ -234,7 +234,7 @@ class MitGob extends FetchService {
    * }
    * getMITConsulta();
    */
-  GetConsulta(documento) {
+  getConsulta(documento) {
     const endpoint = `${this.apiDomain}/api/Consulta?documento=${documento}`;
     return this.fetchData(endpoint);
   }
@@ -250,7 +250,7 @@ class MitGob extends FetchService {
    *   try {
    *     const from = '0';
    *     const limit = 10;
-   *     const mitData = await mitGob.GetPuestos(from, limit);
+   *     const mitData = await mitGob.getPuestos(from, limit);
    *     console.log('MIT Puestos:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Puestos:', error);
@@ -258,7 +258,7 @@ class MitGob extends FetchService {
    * }
    * getMITPuestos();
    */
-  GetPuestos(from, limit) {
+  getPuestos(from, limit) {
     const endpoint = `${this.apiDomain}/api/Puestos?from=${from}&limit=${limit}`;
     return this.fetchData(endpoint);
   }
@@ -272,7 +272,7 @@ class MitGob extends FetchService {
    * async function getMITPuestoById() {
    *   try {
    *     const puestoId = '123';
-   *     const mitData = await mitGob.GetPuestoById(puestoId);
+   *     const mitData = await mitGob.getPuestoById(puestoId);
    *     console.log('MIT Puesto:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Puesto:', error);
@@ -280,7 +280,7 @@ class MitGob extends FetchService {
    * }
    * getMITPuestoById();
    */
-  GetPuestoById(id) {
+  getPuestoById(id) {
     const endpoint = `${this.apiDomain}/api/Puestos/${id}`;
     return this.fetchData(endpoint);
   }
@@ -293,7 +293,7 @@ class MitGob extends FetchService {
    * @example
    * async function createMITPuesto(postData) {
    *   try {
-   *     const mitData = await mitGob.CreatePuesto(postData);
+   *     const mitData = await mitGob.createPuesto(postData);
    *     console.log('MIT Created Puesto:', mitData);
    *   } catch (error) {
    *     console.error('Error creating MIT Puesto:', error);
@@ -301,7 +301,7 @@ class MitGob extends FetchService {
    * }
    * createMITPuesto({ name: 'New Puesto', department: 'HR' });
    */
-  CreatePuesto(postData) {
+  createPuesto(postData) {
     const endpoint = `${this.apiDomain}/api/Puestos`;
     return this.postData(endpoint, postData);
   }
@@ -315,7 +315,7 @@ class MitGob extends FetchService {
    * @example
    * async function updateMITPuesto(puestoId, updateData) {
    *   try {
-   *     const mitData = await mitGob.UpdatePuesto(puestoId, updateData);
+   *     const mitData = await mitGob.updatePuesto(puestoId, updateData);
    *     console.log('MIT Updated Puesto:', mitData);
    *   } catch (error) {
    *     console.error('Error updating MIT Puesto:', error);
@@ -323,7 +323,7 @@ class MitGob extends FetchService {
    * }
    * updateMITPuesto('123', { name: 'Updated Puesto' });
    */
-  UpdatePuesto(id, updateData) {
+  updatePuesto(id, updateData) {
     const endpoint = `${this.apiDomain}/api/Puestos/${id}`;
     return this.putData(endpoint, updateData);
   }
@@ -336,7 +336,7 @@ class MitGob extends FetchService {
    * @example
    * async function deleteMITPuestoById(puestoId) {
    *   try {
-   *     const mitData = await mitGob.DeletePuestoById(puestoId);
+   *     const mitData = await mitGob.deletePuestoById(puestoId);
    *     console.log('MIT Deleted Puesto:', mitData);
    *   } catch (error) {
    *     console.error('Error deleting MIT Puesto:', error);
@@ -344,7 +344,7 @@ class MitGob extends FetchService {
    * }
    * deleteMITPuestoById('123');
    */
-  DeletePuestoById(id) {
+  deletePuestoById(id) {
     const endpoint = `${this.apiDomain}/api/Puestos/${id}`;
     return this.deleteData(endpoint, id);
   }
@@ -357,7 +357,7 @@ class MitGob extends FetchService {
    * @example
    * async function createMITEmpresa(postData) {
    *   try {
-   *     const mitData = await mitGob.CreateEmpresa(postData);
+   *     const mitData = await mitGob.createEmpresa(postData);
    *     console.log('MIT Created Empresa:', mitData);
    *   } catch (error) {
    *     console.error('Error creating MIT Empresa:', error);
@@ -365,7 +365,7 @@ class MitGob extends FetchService {
    * }
    * createMITEmpresa({ name: 'New Empresa', industry: 'IT' });
    */
-  async CreateEmpresa(postData) {
+  async createEmpresa(postData) {
     const endpoint = `${this.apiDomain}/api/Empresas`;
     const headers = {
       'Content-Type': 'application/json'
@@ -382,7 +382,7 @@ class MitGob extends FetchService {
    * @example
    * async function getMITBeeById(docId) {
    *   try {
-   *     const mitData = await mitGob.GetBeeById(docId);
+   *     const mitData = await mitGob.getBeeById(docId);
    *     console.log('MIT Bee by ID:', mitData);
    *   } catch (error) {
    *     console.error('Error retrieving MIT Bee by ID:', error);
@@ -390,7 +390,7 @@ class MitGob extends FetchService {
    * }
    * getMITBeeById('456');
    */
-  GetBeeById(doc) {
+  getBeeById(doc) {
     const endpoint = `${this.apiDomain}/api/Bee?doc=${doc}`;
     return this.fetchData(endpoint);
   }
