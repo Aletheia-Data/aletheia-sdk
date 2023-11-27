@@ -6,6 +6,7 @@ const DGII = require('./gob.do/dgii.js');
 const Aletheia = require('./aletheia');
 const DatosAbiertos = require('./gob.do/datos-abiertos.js');
 const MitGob = require('./gob.do/mit.js');
+const DigitalGob = require('./gob.do/digital.js');
  
 /**
  * Open Data Class
@@ -30,6 +31,7 @@ class OpenData extends FetchService {
     this.aletheia = new Aletheia();
     this.datosAbiertos = new DatosAbiertos();
     this.mitGob = new MitGob();
+    this.digitalGob = new DigitalGob();
   }
   
   /**
@@ -84,6 +86,8 @@ class OpenData extends FetchService {
         return this.datosAbiertos;
       case 'mit':
         return this.mitGob;
+      case 'digital':
+        return this.digitalGob;
       default:
         return "invalid provider";
     }
