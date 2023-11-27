@@ -297,6 +297,17 @@ async function getAPI() {
     }
 }
 
+async function getAPIAwnswers() {
+    try {
+      const id = "ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e";
+      const apiInfo = await aletheiaSDK.opendata.gob('digital').getApiById(id);
+      const qaData = await aletheiaSDK.services.generateAnswer(apiInfo, 'What is the name of the api?');
+      console.log('Develper API answers:', qaData.choices[0]);
+    } catch (error) {
+      console.error('Error retrieving developer api:', error);
+    }  
+}
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -321,4 +332,4 @@ async function getAPI() {
 // createMITEmpresa();
 //getConsultaMIT()
 // getAPIs();
-getAPI();
+getAPIAwnswers();
