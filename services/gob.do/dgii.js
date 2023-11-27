@@ -8,6 +8,7 @@ const { composeSoapXml } = require('../../utils/soap.js');
  * Represents a client for interacting with the DGII (Dirección General de Impuestos Internos) SOAP API.
  * This class extends the FetchService class and provides methods for various operations such as retrieving
  * taxpayer information, vehicle details, NCF (Número de Comprobante Fiscal), and more.
+ * <br /><br />Full API specs: <a href="https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL" target="_blank">https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL</a>
  *
  * @category Gob.do
  * @class

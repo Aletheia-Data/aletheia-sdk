@@ -6,6 +6,7 @@ const FetchService = require('../fetchService.js');
  * Represents a client for interacting with the Map (Ministerio de Administración Pública) API, providing methods for retrieving open data.
  * This class extends the FetchService class and focuses on accessing data related to various services
  * using specified parameters and formats.
+ * <br /><br />Full API specs: <a href="https://map.gob.do/api/datos_abiertos" target="_blank">https://map.gob.do/api/datos_abiertos</a>
  *
  * @category Gob.do
  * @class

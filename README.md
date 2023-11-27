@@ -78,7 +78,7 @@ The Aletheia SDK provides open data from the following API endpoints:
 | Dirección General de Contrataciones Públicas (DGCP) | https://api.dgcp.gob.do/                         | [API Specs](https://api.dgcp.gob.do/)               | up-to-date     | No      |
 | Dirección General de Impuestos Internos (DGII) | https://dgii.gov.do//wsMovilDGII/WSMovilDGII.asmx?WSDL                         | [Not Available](#)               | up-to-date     | No      |
 | Datos Abiertos (Datos.gob.do) | https://datos.gob.do/                         | [Not Available](#)               | up-to-date     | No      |
-
+| Ministerio de Trabajo de la República Dominicana (MIT) | https://webapi.mt.gob.do/                         | [API Specs](https://webapi.mt.gob.do/Help)               | up-to-date     | No      |
 
 ## 🙏🏾 Special Thanks
 

@@ -6,6 +6,7 @@ const FetchService = require('../fetchService.js');
  * Represents a client for interacting with the DGCP (Dirección General de Contrataciones Públicas) API.
  * This class extends the FetchService class and provides methods for retrieving information about government releases,
  * including details about suppliers, procuring entities, and releases related to Covid conditions.
+ * <br /><br />Full API specs: <a href="https://api.dgcp.gob.do" target="_blank">https://api.dgcp.gob.do</a>
  *
  * @category Gob.do
  * @class
