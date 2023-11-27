@@ -77,7 +77,25 @@ async function fetchAndParseCSV(url) {
   return Papa.parse(csvData, options);
 }
 
+
+function fetchHTMLElemByClass(url, targetClass) {
+  return fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const $ = cheerio.load(html);
+      // Parse HTML content using Cheerio
+      // Select elements with the specified class
+      const elements = $(`.${targetClass}`);
+      return elements;
+    })
+    .catch(error => {
+      console.error('Error fetching page:', error);
+      throw error;
+    });
+}
+
 module.exports = {
   fetchAndParseHTML,
-  fetchAndParseCSV
+  fetchAndParseCSV,
+  fetchHTMLElemByClass,
 };
