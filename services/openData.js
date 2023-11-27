@@ -5,6 +5,7 @@ const DGCP = require('./gob.do/dgcp.js');
 const DGII = require('./gob.do/dgii.js');
 const Aletheia = require('./aletheia');
 const DatosAbiertos = require('./gob.do/datos-abiertos.js');
+const MitGob = require('./gob.do/mit.js');
  
 /**
  * Open Data Class
@@ -28,6 +29,7 @@ class OpenData extends FetchService {
     this.dgii = new DGII();
     this.aletheia = new Aletheia();
     this.datosAbiertos = new DatosAbiertos();
+    this.mitGob = new MitGob();
   }
   
   /**
@@ -80,8 +82,10 @@ class OpenData extends FetchService {
         return this.dgii;
       case 'datos-abiertos':
         return this.datosAbiertos;
+      case 'mit':
+        return this.mitGob;
       default:
-        return "invalid service";
+        return "invalid provider";
     }
   }
 

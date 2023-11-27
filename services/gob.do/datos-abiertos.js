@@ -5,6 +5,7 @@ const { getDomainFromUrl } = require("../../utils/url.js");
 /**
  * Represents Datos Abiertos class, which extends the FetchService class.
  * This class provides methods to interact with the Datos Abiertos Datasets.
+ * <br /><br />Full API specs: <a href="https://datos.gob.do/" target="_blank">https://datos.gob.do/</a>
  * 
  * @category Gob.do
  */

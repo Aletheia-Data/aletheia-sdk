@@ -203,6 +203,67 @@ async function getDatasetCSVUrls() {
     }
 }
 
+
+async function getMITDivision() {
+    try {
+        // disabling ssl verification as without it the method trows an error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+        // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+        // TODO: find a better solution
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        const mitData = await aletheiaSDK.opendata.gob('mit').GetTiposDivision();
+        console.log('MIT Division Data:', mitData);
+    } catch (error) {
+        console.error('Error retrieving MIT data:', error);
+    }
+}
+
+async function getMITDivisiones() {
+    try {
+        // disabling ssl verification as without it the method trows an error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+        // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+        // TODO: find a better solution
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        const mitData = await aletheiaSDK.opendata.gob('mit').GetDivisiones();
+        console.log('MIT Division Data:', mitData);
+    } catch (error) {
+        console.error('Error retrieving MIT data:', error);
+    }
+}
+
+async function getMITAvailableYears() {
+    try {
+        // disabling ssl verification as without it the method trows an error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+        // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+        // TODO: find a better solution
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        const mitData = await aletheiaSDK.opendata.gob('mit').GetAvailableYears();
+        console.log('MIT Division Data:', mitData);
+    } catch (error) {
+        console.error('Error retrieving MIT data:', error);
+    }
+}
+
+async function createMITEmpresa() {
+    try {
+        // disabling ssl verification as without it the method trows an error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+        // https://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature
+        // TODO: find a better solution
+        process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0;
+        const params = {
+            "nombre": "Aletheia",
+            "rnc": "123456789",
+            "tipo": "1",
+            "direccion": "Calle 1",
+            "telefono": "8091234567",
+            "correo": "test@text.com"
+        }
+        const mitEmpresaData = await aletheiaSDK.opendata.gob('mit').CreateEmpresa(params);
+        console.log('MIT Empresa Data:', mitEmpresaData);
+    } catch (error) {
+        console.error('Error retrieving MIT data:', error);
+    }
+}
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -220,3 +281,8 @@ async function getDatasetCSVUrls() {
 // getDatosAbiertosDataset();
 // getDatosAbiertosDatasets();
 // getDatasetCSVUrls();
+// getMITDivision();
+// getCitizenData();
+// getMITDivisiones();
+getMITAvailableYears();
+// createMITEmpresa();
