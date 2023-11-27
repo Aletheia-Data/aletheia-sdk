@@ -54,7 +54,7 @@ class DigitalGob extends FetchService {
   *     }
   * }
    */
-  getApisById(id) {
+  getApiById(id) {
     const endpoint = `${this.apiDomain}/apis/${id}`;
     return this.fetchData(endpoint);
   }

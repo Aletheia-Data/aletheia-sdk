@@ -290,7 +290,7 @@ async function getAPIs() {
 async function getAPI() {
     try {
       const id = "ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e";
-      const apiInfo = await aletheiaSDK.opendata.gob('digital').getApisById(id);
+      const apiInfo = await aletheiaSDK.opendata.gob('digital').getApiById(id);
       console.log('Develper APIs:', apiInfo);
     } catch (error) {
       console.error('Error retrieving developer api:', error);
