@@ -18,6 +18,9 @@
     "type": "git",
     "url": "git+ssh://git@github.com/Aletheia-Data/aletheia-sdk.git"
   },
+  "publishConfig": {
+    "@aletheia-data": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "sdk",
     "opendata",
