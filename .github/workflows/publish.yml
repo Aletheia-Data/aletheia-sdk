@@ -11,16 +11,9 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 16
           registry-url: https://npm.pkg.github.com/
-      
-      # pre-releases, triggered by `next` as part of git tag
-      - run: npm publish --tag next --access public
-        if: ${{ contains(github.ref, 'next') }}
-
-      # production releases
-      - run: npm publish --access public
-        if: ${{ !contains(github.ref, 'next') }}
+      - run: npm publish
