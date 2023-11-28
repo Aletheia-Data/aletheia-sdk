@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Aletheia-Data/aletheia-sdk.git"
+    "url": "https://github.com/Aletheia-Data/aletheia-sdk"
   },
   "publishConfig": {
     "@aletheia-data": "https://npm.pkg.github.com"
