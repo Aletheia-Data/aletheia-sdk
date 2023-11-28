@@ -3,10 +3,11 @@ const FetchService = require('../fetchService.js');
 /**
  * AmbienteGob Class
  * 
- * Represents a client for interacting with various endpoints of the AmbienteGob service.
+ * Represents a client for interacting with various endpoints of "Solicitudes Autorizaciones Ambientales".
  * This class extends the FetchService class and provides methods for different use cases.
+ * <br /><br />Full API specs: <a href="https://apisolicitudambiental.ambiente.gob.do/swagger/index.html" target="_blank">https://apisolicitudambiental.ambiente.gob.do</a>
  *
- * @category AmbienteGob Services
+ * @category Gob.do
  * @class
  * @extends FetchService
  */

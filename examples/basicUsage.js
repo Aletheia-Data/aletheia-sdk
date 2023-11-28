@@ -298,8 +298,8 @@ async function getAPI() {
 }
 
 async function getAmbiente(){
-    const ambiente = await aletheiaSDK.opendata.gob('ambiente').getCategoryById(3);
-    console.log('Ambiente:', ambiente);
+    const ambiente = await aletheiaSDK.opendata.gob('ambiente').getDocumentComments();
+    console.log('Ambiente:', ambiente.data);
 }
 
 getAmbiente();
