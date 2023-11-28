@@ -7,6 +7,7 @@ const Aletheia = require('./aletheia');
 const DatosAbiertos = require('./gob.do/datos-abiertos.js');
 const MitGob = require('./gob.do/mit.js');
 const DigitalGob = require('./gob.do/digital.js');
+const AmbienteGob = require('./gob.do/medio-ambiente.js');
  
 /**
  * Open Data Class
@@ -32,6 +33,7 @@ class OpenData extends FetchService {
     this.datosAbiertos = new DatosAbiertos();
     this.mitGob = new MitGob();
     this.digitalGob = new DigitalGob();
+    this.ambienteGob = new AmbienteGob();
   }
   
   /**
@@ -88,6 +90,8 @@ class OpenData extends FetchService {
         return this.mitGob;
       case 'digital':
         return this.digitalGob;
+      case 'ambiente':
+        return this.ambienteGob;
       default:
         return "invalid provider";
     }

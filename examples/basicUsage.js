@@ -297,6 +297,14 @@ async function getAPI() {
     }
 }
 
+async function getAmbiente(){
+    const ambiente = await aletheiaSDK.opendata.gob('ambiente').getCategoryById(3);
+    console.log('Ambiente:', ambiente);
+}
+
+getAmbiente();
+
+
 // Call the methods
 // getCitizenData();
 // getFuelPrices();
@@ -321,4 +329,4 @@ async function getAPI() {
 // createMITEmpresa();
 //getConsultaMIT()
 // getAPIs();
-getAPI();
+// getAPI();
