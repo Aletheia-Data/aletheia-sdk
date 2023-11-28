@@ -1,7 +1,7 @@
 
 const AletheiaSDK = require('../AletheiaSDK'); 
 const { get } = require('../dist/bundle');
-
+const { downloadFile } = require('../utils/url.js');
 // Replace 'YOUR_API_KEY' and 'YOUR_AUTH_DOMAIN' with your actual API key and authentication domain
 const apiKey = 'YOUR_API_KEY';
 const authDomain = 'YOUR_AUTH_DOMAIN';
@@ -20,7 +20,7 @@ console.log('Authentication Result:', authenticationResult);
 // Full documentation: https://developer.digital.gob.do/apis/ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e
 async function getCitizenData() {
   try {
-    const isValid = await aletheiaSDK.services.validateCitizenCedula('XXX');
+    const isValid = await aletheiaSDK.services.validateCitizenCedula('00118773936');
     console.log('Citizen Cedula:', isValid);
   } catch (error) {
     console.error('Error retrieving citizen data:', error);
@@ -31,7 +31,7 @@ async function getCitizenData() {
 // Full documentation: https://developer.digital.gob.do/apis/fdf3319d-521e-4364-b331-9d521e636442
 async function getFuelPrices() {
   try {
-    const fuelPrices = await aletheiaSDK.opendata.fuelPrices('date', '2023-11-01');
+    const fuelPrices = await aletheiaSDK.opendata.fuelPrices('date', '2022-11-01');
     console.log('Fuel Prices:', fuelPrices);
   } catch (error) {
     console.error('Error retrieving fuel prices:', error);
@@ -84,7 +84,8 @@ async function getDGCPData() {
 // Full documentation: https://dgii.gov.do/wsMovilDGII/WSMovilDGII.asmx
 const dgiiService = aletheiaSDK.opendata.gob('dgii');
 // test numbers
-const rncContribuyente = '130102058';
+// const rncContribuyente = '130102058';
+const rncContribuyente = '132365178';
 const ncfContribuyente = 'B0100000003';
 async function getDGIIContribuyentes() {
     try {
@@ -299,10 +300,20 @@ async function getAPI() {
 
 async function getAPIAwnswers() {
     try {
-      const id = "ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e";
-      const apiInfo = await aletheiaSDK.opendata.gob('digital').getApiById(id);
-      const qaData = await aletheiaSDK.services.generateAnswer(apiInfo, 'What is the name of the api?');
-      console.log('Develper API answers:', qaData.choices[0]);
+      const initChatGPT = new aletheiaSDK.services.chatGPT();
+      // const id = "ff9ce928-e16e-4ea9-9ce9-28e16e1ea96e";
+      // const dataset = 'nomina-miembros-policiales-2019';
+      // const dataset = 'recaudaciones-sirite-2021-2022';
+      // const apiInfo = await aletheiaSDK.opendata.gob('datos-abiertos').getDatasetCSVUrls(dataset);
+      // console.log('Develper APIs:', apiInfo);
+      // const qaData = await aletheiaSDK.services.generateAnswer(apiInfo[0], "You are a customer support chatbot. Use your knowledge base to best respond to customer queries.");
+      const filePath = await downloadFile('https://cpep.gob.do/adm/Documentos/Datos%20Abiertos/N%C3%B3minas/2023/Copia%20de%20NOmina%20de%20Empleados%202022-%20Octubre%202023.xlsx');
+      
+      const initChatbot = await initChatGPT.initChatbotWithFilePath(filePath, "You are a customer support chatbot. Use your knowledge base to best respond to customer queries.");
+      console.log('Init Chatbot with File(s):', initChatbot);
+
+      // const initChatbot = await initChatGPT.initChatbot(['file-E1mOMm7GgTftwwHqr5TD2soI'], "You are a customer support chatbot. Use your knowledge base to best respond to customer queries.");
+      // console.log('Init Chatbot:', initChatbot);
     } catch (error) {
       console.error('Error retrieving developer api:', error);
     }  
@@ -314,7 +325,7 @@ async function getAPIAwnswers() {
 // getTerritories();
 // getMapData();
 // getDGCPData();
-// getDGIIContribuyentes();
+getDGIIContribuyentes();
 // getDGIIContribuyentesCount();
 // getDGIIDocumento();
 // getDGIIVehiculoPorDATAMATRIX();
@@ -330,6 +341,6 @@ async function getAPIAwnswers() {
 // getMITDivisiones();
 // getMITAvailableYears();
 // createMITEmpresa();
-//getConsultaMIT()
+// getConsultaMIT()
 // getAPIs();
-getAPIAwnswers();
+// getAPIAwnswers();

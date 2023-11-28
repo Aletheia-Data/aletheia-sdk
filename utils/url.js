@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 /**
  * Extracts the domain from the provided URL.
  *
@@ -21,4 +23,27 @@ function getDomainFromUrl(url) {
   return domain;
 }
 
-module.exports = { getDomainFromUrl };
+async function downloadFile(url) {
+  try {
+
+    return await fetch(url)
+      .then( res => res.blob() )
+      .then( async blob => {
+        const arrayBuffer = await blob.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const fileName = url.substring(url.lastIndexOf('/') + 1);
+        const fileExtension = fileName.split('.').pop(); // Extract file extension
+        const fullFileName = `${fileName.replace(/\.[^/.]+$/, '')}.${fileExtension}`;
+        const destinationPath = `__temp__/${fullFileName}`;
+        await fs.promises.writeFile(destinationPath, buffer);
+        console.log(`File downloaded and saved to: ${fullFileName}`);
+        return destinationPath
+      });
+    
+  } catch (error) {
+    console.error('Error generating answer:', error);
+    return null;
+  }
+}
+
+module.exports = { getDomainFromUrl, downloadFile };

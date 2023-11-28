@@ -1,5 +1,5 @@
 const FetchService = require('./fetchService.js');
-const OpenAI = require('openai');
+const ChatGPT = require('./chatbots/chatgpt.js');
 
 /**
  * Services Class
@@ -12,14 +12,8 @@ const OpenAI = require('openai');
  * @extends FetchService
  */
 class Services extends FetchService {
-  /**
-   * Create an instance of OpenData service.
-   * @param {string} apiKey - The API key for authentication.
-   */
   constructor(apiKey) {
     super(apiKey);
-    // Set up OpenAI API credentials
-    this.openai = new OpenAI({ apiKey: 'xxx...' });
   }
 
   /**
@@ -45,25 +39,6 @@ class Services extends FetchService {
     const endpoint = `https://api.digital.gob.do/v3/cedulas/${cedula}/validate`;
 
     return this.fetchData(endpoint);
-  }
-
-  // Function to generate an answer based on the content and question
-  async generateAnswer(content, question) {
-    console.log(content);
-    try {
-      const params = {
-        messages: [
-          { role: 'assistant', content: JSON.stringify(content.data) },
-          { role: 'user', content: question },
-        ],
-        model: 'gpt-3.5-turbo',
-      };
-      const chatCompletion = await this.openai.chat.completions.create(params);
-      return chatCompletion;
-    } catch (error) {
-      console.error('Error generating answer:', error);
-      return null;
-    }
   }
 }
 
