@@ -77,8 +77,8 @@ class OpenData extends FetchService {
   }
 
   /**
-  * UNOFFICIAL: Retrieves a list of banks from the API.
-  * REPO: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * UNOFFICIAL: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * Retrieves a list of banks from the API.
   * <br /><br />Full documentation: <a href="https://banks.fly.dev/swagger/index.html" target="_blank">https://banks.fly.dev/swagger/index.html</a>
   * 
   * @async
@@ -102,8 +102,8 @@ class OpenData extends FetchService {
   }
 
   /**
-  * UNOFFICIAL: Retrieves detailed information about a bank based on the provided URL.
-  * REPO: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * UNOFFICIAL: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * Retrieves detailed information about a bank based on the provided URL.
   * <br /><br />Full documentation: <a href="https://banks.fly.dev/swagger/index.html" target="_blank">https://banks.fly.dev/swagger/index.html</a>
   * 
   * @async
