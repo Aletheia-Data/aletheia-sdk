@@ -302,7 +302,14 @@ async function getAmbiente(){
     console.log('Ambiente:', ambiente.data);
 }
 
-getAmbiente();
+// getAmbiente();
+
+async function getBanks(){
+    const banks = await aletheiaSDK.opendata.getBanks();
+    console.log('Banks:', banks.data);
+}
+
+getBanks();
 
 
 // Call the methods
