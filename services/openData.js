@@ -76,6 +76,58 @@ class OpenData extends FetchService {
     return this.fetchData(endpoint);
   }
 
+  /**
+  * UNOFFICIAL: Retrieves a list of banks from the API.
+  * REPO: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * <br /><br />Full documentation: <a href="https://banks.fly.dev/swagger/index.html" target="_blank">https://banks.fly.dev/swagger/index.html</a>
+  * 
+  * @async
+  * @returns {Promise<Object>} - A Promise that resolves to the list of banks.
+  * @throws {Error} - Throws an error if there is an issue with the API request.
+  * @example
+  * async function getDominicanBanks() {
+  *   try {
+  *     const banks = await aletheiaSDK.opendata.getBanks();
+  *     console.log('Dominican Banks:', banks);
+  *   } catch (error) {
+  *     console.error('Error retrieving fuel prices:', error);
+  *   }
+  * }
+  * getDominicanBanks();
+  */
+  async getBanks() {
+    const endpoint = `https://banks.fly.dev/api/Banks`;
+
+    return this.fetchData(endpoint);
+  }
+
+  /**
+  * UNOFFICIAL: Retrieves detailed information about a bank based on the provided URL.
+  * REPO: https://github.com/Erinxon/api-bancos-republica-dominicana
+  * <br /><br />Full documentation: <a href="https://banks.fly.dev/swagger/index.html" target="_blank">https://banks.fly.dev/swagger/index.html</a>
+  * 
+  * @async
+  * @param {string} linkDetail - The URL link of the bank's details.
+  * @returns {Promise<Object>} - A Promise that resolves to the detailed information about the bank.
+  * @throws {Error} - Throws an error if there is an issue with the API request.
+  * @example
+  * async function getDominicanBankDetails() {
+  *   try {
+  *     const linkDetail = 'https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/banreservas/';
+  *     const bankDetails = await aletheiaSDK.opendata.getBankDetail(linkDetail);
+  *     console.log('Dominican Bank:', bankDetails);
+  *   } catch (error) {
+  *     console.error('Error retrieving fuel prices:', error);
+  *   }
+  * }
+  * getDominicanBankDetails();
+  */
+  async getBankDetail(linkDetail) {
+    const endpoint = `https://banks.fly.dev/api/Banks/Detail?URL=${encodeURIComponent(linkDetail)}`;
+
+    return this.fetchData(endpoint);
+  }
+
   gob(gob) {
     switch (gob) {
       case 'map':
