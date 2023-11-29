@@ -71,6 +71,8 @@ The Aletheia SDK provides services from the following providers:
 
 The Aletheia SDK provides open data from the following API endpoints:
 
+OFFICIAL:
+
 | Name                                   | API URL                                    | API Specs                                   | Status       | Authentication       |
 | -------------------------------------- | ------------------------------------------ | --------------------------------------------| ------------ | ---------------------- |
 | Aletheia Data | https://aletheiadata.org/                              | [API Specs](https://admin.aletheiadata.org/documentation/v1.0.0)                | up-to-date     | No      |
@@ -81,6 +83,13 @@ The Aletheia SDK provides open data from the following API endpoints:
 | Ministerio de Trabajo de la República Dominicana (MIT) | https://webapi.mt.gob.do/                         | [API Specs](https://webapi.mt.gob.do/Help)               | up-to-date     | Yes/No      |
 | Portal de API's Dominicano | https://developer.digital.gob.do/server/portal/environments/DEFAULT                         | [Not Available](#)               | up-to-date     | No      |
 | Ministerio de Medio Ambiente y Recursos Naturales | https://apisolicitudambiental.ambiente.gob.do/swagger/index.html                         | [API Specs](https://apisolicitudambiental.ambiente.gob.do/swagger/index.html)               | up-to-date     | Yes/No      |
+
+UNOFFICIAL:
+
+| Name                                   | API URL                                    | API Specs                                   | Status       | Authentication       |
+| -------------------------------------- | ------------------------------------------ | --------------------------------------------| ------------ | ---------------------- |
+| API Bancos republica dominicana | https://github.com/Erinxon/api-bancos-republica-dominicana                              | [API Specs](https://banks.fly.dev/swagger/index.html)                | up-to-date     | No      |
+
 
 ## 🙏🏾 Special Thanks
 
